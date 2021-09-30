@@ -5,4 +5,4 @@ from .models import Checkout
 class CheckoutSerializer(serializers.ModelSerializer):
     class Meta:
         model = Checkout
-        fields = ('id', 'name', 'description', 'price')
+        fields = ['id', 'name', 'description', 'price']
