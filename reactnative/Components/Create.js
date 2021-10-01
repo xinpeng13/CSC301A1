@@ -14,20 +14,20 @@ function Create() {
                 value = {name}
                 mode = "outlined"
                 onChangeText = {text => setName(text)}
-            >  </TextInput>
+            />
             <TextInput style = {styles.inputStyle}
                 label = "Description"
                 value = {description}            
                 mode = "outlined"
                 onChangeText = {text => setDescription(text)}
-            >  </TextInput>
+            />
             <TextInput style = {styles.inputStyle}
                 label = "Price"
                 value = {price}
                 mode = "outlined"
                 keyboardType = 'number-pad'
                 onChangeText = {text => setPrice(text)}
-            >  </TextInput>
+            />
             <Button style = {{margin: 15}}
             mode = "contained"
             onPress = {()=> console.log("Button pressed")}

@@ -6,6 +6,7 @@ import { useState , useEffect} from 'react';
 export default function Item() {
 
   const [data, setData] = useState(null);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     console.log("useEffect");
@@ -32,7 +33,9 @@ export default function Item() {
       <Card style = {styles.cardStyle}>
         <Text>{item.name}</Text>
         <Text>{item.description}</Text>
-        
+        <Text>{item.price}</Text>
+        <Button onPress = {() => setCount(count+item.price)}>Add to cart</Button>
+        <Button onPress = {() => setCount(count-item.price)}>Remove from cart</Button>
       </Card>
     )
   }
@@ -45,8 +48,12 @@ export default function Item() {
         return renderData(item)
         }}
         keyExtractor = {item => `${item.id}`}
-
         />
+        <Text style = {styles.text}>Price:{count}</Text>
+        <Text style = {styles.text}>Tax: {count*0.13}</Text>
+        <Text style = {styles.text}>------------------------------------------------------</Text>
+        <Text style = {styles.text}>Total: {count* 1.13}</Text>
+        <Text style = {styles.text}></Text>
       </View>
       
   );
@@ -59,8 +66,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#047167',
   },
   text:{
-      color: '#fff',
-      fontSize: 23,
-      textAlign: 'center',
+      color: '#047167',
+      fontSize: 15,
+      marginLeft:20,
   }
 });
